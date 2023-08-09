@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 941cf55cbf8cbd38194eed4c703da0a7c4fb5587
 # TaskTracker
 
 16 Project 2: Interactive Full-Stack Application
@@ -124,4 +127,7 @@ The URL of the deployed application.
 The URL of the GitHub repository, with a unique name and a README describing the project.
 
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+<<<<<<< HEAD
+>>>>>>> 941cf55cbf8cbd38194eed4c703da0a7c4fb5587
+=======
 >>>>>>> 941cf55cbf8cbd38194eed4c703da0a7c4fb5587
