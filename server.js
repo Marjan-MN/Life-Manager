@@ -11,7 +11,6 @@ const hbs = exphbs.create({ helpers });
 
 const sequelize = require('./config/connection');
 
-// do we need??
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
     secret: 'secret',
