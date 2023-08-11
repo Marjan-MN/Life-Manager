@@ -11,32 +11,42 @@ Interests.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    travel: {
-      type: DataTypes.STRING,
-      //title, descriptions
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    travel: {
+        type: DataTypes.BOOLEAN,
+       
+    },
+    recipe: {
+        type: DataTypes.BOOLEAN,
+       
+    },
+    work: {
+        type: DataTypes.BOOLEAN,
+       
+    },
+    budget: {
+        type: DataTypes.BOOLEAN,
+       
+    },
+    choirs: {
+    type: DataTypes.BOOLEAN,
+   
+  },
+  user_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: 'user',
+      key: 'id',
     },
   },
-  {
+  
     sequelize,
     timestamps: false,
     freezeTableName: true,
