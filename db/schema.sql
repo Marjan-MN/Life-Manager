@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS lifeManager_db;
+DROP DATABASE IF EXISTS life_manager_db;
 
-CREATE DATABASE lifeManager_db;
+CREATE DATABASE life_manager_db;
