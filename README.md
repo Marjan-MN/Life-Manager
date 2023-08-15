@@ -26,4 +26,9 @@ As a motivated individual seeking an effective way to manage my tasks and lists,
 ## Screenshot of app
 
 ## Technologies used
+Node.js
+npm
+express
+mysql
+SweetAlert
 

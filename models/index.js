@@ -1,8 +1,8 @@
 const User =  require('./user');
-const Task = require('./task');
-const TaskList = require('./taskList')
+const Tasks = require('./Tasks');
+const Tasklist = require('./Tasklist')
 
-Task.belongsTo(User, {
+Tasks.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
@@ -11,10 +11,11 @@ Tasklist.belongsTo(User, {
 });
    
 
-Task.belongsTo(Tasklist, {
+Tasks.belongsTo(Tasklist, {
   foreignKey: 'task_id'
 });
 
 
 
-module.exports = { User, Task, Tasklist};
+
+module.exports = { User, Tasks, Tasklist};

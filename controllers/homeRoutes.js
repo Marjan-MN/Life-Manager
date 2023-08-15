@@ -1,28 +1,37 @@
+
 const router = require('express').Router();
-const Dish = require('../models/interests')
+const { User } = require('../models');
+const withAuth = require('../utils/auth');
 
-// route for all the tasks
-router.get('/', async (req, res) => {
-    const taskData = await Task.findAll().catch((err) => {
-        res.json(err);
-    });
-    const tasks = taskData.map((task) => task.get({ plain: true}));
-    res.render('all', { tasks });
-});
-
-// route for one task
-router.get('/task/:id', async (req, res) => {
+// Prevent non logged in users from viewing the homepage
+router.get('/', withAuth, async (req, res) => {
     try {
-        const taskData = await Task.findbyPk(req.params.id);
-        if(!taskData) {
-            res.status(404).json({message: 'No task with this ID'});
-            return;
-        }
-        const task = taskData.gte({ plain: true });
-        res.render('task', task);
+      const userData = await User.findAll({
+        attributes: { exclude: ['password'] },
+        order: [['name', 'ASC']],
+      });
+  
+      const users = userData.map((project) => project.get({ plain: true }));
+  
+      res.render('homepage', {
+        users,
+        // Pass the logged in flag to the template
+        logged_in: req.session.logged_in,
+      });
     } catch (err) {
-        res.status(500).json(err);
-    };
-});
+      res.status(500).json(err);
+    }
+  });
 
-module.exports = router;
+  router.get('/login', (req, res) => {
+    // If a session exists, redirect the request to the homepage
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
+  
+  module.exports = router;
+

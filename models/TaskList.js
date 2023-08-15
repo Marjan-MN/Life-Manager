@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class TaskList extends model {}
+class Tasklist extends Model {}
 
 // the saved list
 
-TaskList.init(
+Tasklist.init(
 {
     id: {
         type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ TaskList.init(
       task_id: {
         type: DataTypes.INTEGER,
         references: {
-            model:'Task',
+            model:'task',
             key: 'id'
         },
     },
@@ -33,8 +33,10 @@ TaskList.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'TaskList',
+    modelName: 'tasklist',
 }
 );
+
+module.exports = Tasklist;
 
 
