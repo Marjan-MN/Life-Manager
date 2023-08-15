@@ -1,5 +1,5 @@
 const User =  require('./user');
-const Task = require('./task');
+const Tasks = require('./Tasks');
 const TaskList = require('./taskList')
 
 Task.belongsTo(User, {
@@ -17,4 +17,4 @@ Task.belongsTo(TaskList, {
 
 
 
-module.exports = { User, Interests};
+module.exports = { User, Tasks};
