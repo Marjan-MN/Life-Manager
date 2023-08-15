@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Interests extends Model {}
+class Task extends Model {}
 
-Tasks.init(
+Task.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -19,6 +19,12 @@ Tasks.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
+
       // all these interests not part of mvp
     travel: {
         type: DataTypes.BOOLEAN,
@@ -57,7 +63,7 @@ Tasks.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Interests',
+    modelName: 'Task',
   }
 );
 

@@ -6,7 +6,7 @@ Task.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-TaskList.belongsTo(User, {
+Tasklist.belongsTo(User, {
    foreignKey: 'user_id'
 });
    
@@ -17,4 +17,4 @@ Task.belongsTo(TaskList, {
 
 
 
-module.exports = { User, Interests};
+module.exports = { User, Task, Tasklist};
