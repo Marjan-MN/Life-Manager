@@ -11,7 +11,7 @@ Tasklist.belongsTo(User, {
 });
    
 
-Task.belongsTo(TaskList, {
+Task.belongsTo(Tasklist, {
   foreignKey: 'task_id'
 });
 
