@@ -3,7 +3,7 @@ const { User , Tasks } = require('../models');
 
 
 const userData = require('./userData.json');
-// const TaskData = require('./TaskData.json');
+const taskData = require('./TaskData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,8 +13,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // await Tasks.bulkCreate(TaskData);
-
+  for(const task of taskData){
+    await Tasks.create({...task})
+  }
   process.exit(0);
 };
 

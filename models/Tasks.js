@@ -1,7 +1,4 @@
-const {
-  Model,
-  DataTypes
-} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Tasks extends Model {}
@@ -27,32 +24,40 @@ Tasks.init({
     defaultValue: DataTypes.NOW,
   },
 
+  // type: {
+  //   type: DataTypes.STRING,
+  //   allowNull: false,
+  //   validate:{
+  //     isIn:[['travel', 'recipe', ]]
+  //   }
+  // },
   // all these interests not part of mvp
-  travel: {
-    type: DataTypes.BOOLEAN,
-    default: false
+  // travel: {
+  //   type: DataTypes.BOOLEAN,
+  //   default: false
 
-  },
-  recipe: {
-    type: DataTypes.BOOLEAN,
-    default: false
+  // },
+  // recipe: {
+  //   type: DataTypes.BOOLEAN,
+  //   default: false
 
-  },
-  work: {
-    type: DataTypes.BOOLEAN,
-    default: false
+  // },
+  // work: {
+  //   type: DataTypes.BOOLEAN,
+  //   default: false
 
-  },
-  budget: {
-    type: DataTypes.BOOLEAN,
-    default: false
+  // },
+  // budget: {
+  //   type: DataTypes.BOOLEAN,
+  //   default: false
 
-  },
-  choirs: {
-    type: DataTypes.BOOLEAN,
-    default: false
+  // },
+  // choirs: {
+  //   type: DataTypes.BOOLEAN,
+  //   default: false
 
-  },
+  // },
+
   user_id: {
     type: DataTypes.INTEGER,
     references: {
