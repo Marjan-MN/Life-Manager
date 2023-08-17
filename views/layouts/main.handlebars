@@ -1,44 +1,80 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Manager</title>
-  <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/style.css">
-</head>
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2"> 
-      <img src="/public/assets/logo-svg 2.svg" alt="Life Manager">
-      <h1>
-        <span role="img" aria-label=""></span>
-        <a href="/">Life Manager</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="../dashboard.handlebars">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="../login.handlebars">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Manager</title>
+    <link rel="stylesheet" type="text/css" href="/css/jass.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+  </head>
+  <body>
+    <div class="flex-column justify-space-around">
+      <header class="main-header display-flex justify-space-between align-center p-2">
+        <div class="logo-container"><img
+            class="logo header-child header-bar"
+            src="/images/logo-svg 2.svg">
+        </div>
+       
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/public/js/login.js"></script>
-  {{/if}}
-</body>
+        <nav>
+           <div class="profile-container"><img
+            class="profile header-child header-bar"
+            src="/images/Profile-photo.svg">
+          </div>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a href="/dashboard">dashboard</a>
+            |
+            <button class="no-button" id="logout">logout</button>
+          {{else}}
+            <a href="/login" class="profile">login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class="container container-fluid mt-5">
+        <aside class="aside-bar" id="side-bar">
+            <div class="home-page hover">
+                <a href=""><button type="home-page" class="aside-button">
+                    <img src="/images/home (1).svg" alt="Home" class="icon home-icon">
+                </button></a>
+                <p>Home</p>
+            </div>
+            <div class="hover">
+                <button type="calendar" id="calendar" class="aside-button">
+                    <img src="/images/calendar(1).svg" alt="" class="icon">
+                </button><p>Calendar</p>
+            </div>
+             <div class="hover">
+                <button type="my-task" id="my-task" class="aside-button">
+                    <img src="/images/my-tasks(1).svg" alt="" class="icon">
+                </button><p>My Tasks</p>
+            </div>
+            <div class="hover">
+                <button type="interests" id="interests" class="aside-button">
+                    <img src="/images/interest(1).svg" alt="" class="icon">
+                </button><p>Interests</p>
+            </div>
+              <div class="">
+                <button type="create-task" id="create-task" class="aside-button">
+                    <img src="/images/create-task.svg" alt="" class="add-icon">
+                </button>
+            </div>
+        </aside>
+        <div class="dashboard">
+        <!-- Render the sub layout -->
+          {{{body}}}
+        </div>
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>

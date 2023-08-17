@@ -43,24 +43,24 @@ const signupFormHandler = async (event) => {
     }
   }
 };
-  setTimeout(()=>{
-    document.querySelector("dialog").show()
-    //////////////////////////////////////////////////////////////////////////////////////////
-    // Swal.fire({
-    //   title: 'Do you want to save the changes?',
-    //   showSignupButton: true,
-    //   showCancelButton: true,
-    //   signinButtonText: 'Sing In',
-    //   signupButtonText: `Sign Up`,
-    // }).then((result) => {
-    //   /* Read more about isConfirmed, isDenied below */
-    //   if (result.isConfirmed) {
-    //     Swal.fire('Saved!', '', 'success')
-    //   } else if (result.isDenied) {
-    //     Swal.fire('Changes are not saved', '', 'info')
-    //   }
-    // })
-  }, 5000)
+  // setTimeout(()=>{
+  //   document.querySelector("dialog").show()
+  //   //////////////////////////////////////////////////////////////////////////////////////////
+  //   // Swal.fire({
+  //   //   title: 'Do you want to save the changes?',
+  //   //   showSignupButton: true,
+  //   //   showCancelButton: true,
+  //   //   signinButtonText: 'Sing In',
+  //   //   signupButtonText: `Sign Up`,
+  //   // }).then((result) => {
+  //   //   /* Read more about isConfirmed, isDenied below */
+  //   //   if (result.isConfirmed) {
+  //   //     Swal.fire('Saved!', '', 'success')
+  //   //   } else if (result.isDenied) {
+  //   //     Swal.fire('Changes are not saved', '', 'info')
+  //   //   }
+  //   // })
+  // }, 5000)
   
   document
     .querySelector('.login-form')
