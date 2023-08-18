@@ -1,0 +1,29 @@
+
+
+<div class+"edit-task-container">
+    <h2>
+        Update Task
+    </h2>
+    <form class="edit-task-form">
+        <label for="task-name">
+            Task Name
+        </label>
+        <br />
+        <textarea id="task-name" name="task_name" rows="2" cols="30">
+            {{task_name}}
+        </textarea>
+        <br />
+        <label for="description">
+            Description:
+        </label>
+        <br />
+        <textarea id="description" name="description" rows="5" cols="30">
+            {{description}}
+        </textarea>
+        <br />
+        <button type="submit" value="Submit">
+            Submit
+        </button>
+    </form>
+</div>
+<script src="../public/js/editTask.js"></script>

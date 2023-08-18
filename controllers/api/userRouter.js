@@ -1,8 +1,5 @@
 const router = require('express').Router();
 const { User, Tasklist, Tasks, } = require('../../models');
-// do we need line 4 and 5?
-const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // this will post the username and save it, and keep you logged in.
 router.post('/', async (req, res) => {
