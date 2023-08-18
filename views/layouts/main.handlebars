@@ -23,6 +23,7 @@
             src="/images/Profile-photo.svg">
           </div>
           <!-- Conditionally render login or logout links -->
+          {{log logged_in}}
           {{#if logged_in}}
             <a href="/dashboard">dashboard</a>
             |
