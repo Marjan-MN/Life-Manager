@@ -1,8 +1,10 @@
 
-
+{{log userData.dataValues}}
+{{#each tasks as |task|}}
+{{/each}}
 <div class ="row">
-    <div class="col-auto">
-        <h2>Welcome, {{username}}!</h2>
+    <div class="col-auto profile">
+        <h2>{{userData.dataValues.username}}!</h2>
     </div>
 </div>
 
