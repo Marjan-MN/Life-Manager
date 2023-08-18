@@ -7,6 +7,8 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
 // Create a new sequelize store using the express-session package
+// session: identifying the user and keeping them logged in
+// sequelizeStore: store the session information 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();

@@ -27,6 +27,6 @@ async function editFormHandler(event) {
     }
 }
 
-// this will be a link to the handlebars (task.handlebars???), there will need a class called 'edit-task-form' in order to link this page.
+// this will be a link to the handlebars (editTask.handlebars), there will be a class called 'edit-task-form' in order to link this page.
 // there will also need to be a submit button that will link this page's function as well
 document.querySelector('.edit-task-form').addEventListener('submit', editFormHandler);
