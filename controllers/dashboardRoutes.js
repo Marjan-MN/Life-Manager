@@ -33,7 +33,7 @@ router.get("/", withAuth, async (req, res) => {
   // rending this information to the dashboard and requiring user to be logged in session to see data.
   res.render("dashboard", {
     tasks,
-    loggedIn: true,
+    logged_in: req.session.logged_in,
     userData
   });
 } catch (err){
@@ -48,7 +48,7 @@ router.get("/", withAuth, async (req, res) => {
 // allowing user to add a new post if logged in
 router.get("/new", (req, res) => {
   res.render("add-task", {
-    loggedIn: req.session.loggedIn,
+    logged_in: req.session.logged_in,
   });
 });
 
