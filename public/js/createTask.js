@@ -1,6 +1,9 @@
-async function createTasksHandler(event) {
-    event.preventDefault();
+// const Swal = require('sweetalert2')
 
+async function createTasksHandler() {
+    
+    //event.preventDefault();
+ 
     document.location.replace('/dashboard/tasks')
 }
 
