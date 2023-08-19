@@ -1,8 +1,8 @@
 async function createTasksHandler(event) {
     event.preventDefault();
 
-    document.location.replace('/dashboard/new')
+    document.location.replace('/dashboard/tasks')
 }
 
 
-document.querySelector('#create-new-Task').addEventListener('click', createTasksHandler);
+document.querySelector('#save-task').addEventListener('click', createTasksHandler);

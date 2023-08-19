@@ -84,14 +84,64 @@
     margin-top: 50px;
     /* margin-left: 230px; */
 }
+.addTask-form{
+    margin: 50px;
+}
+#title{
+    width: 500px;
+    height: 40px;
+    background-color: rgb(247, 253, 253);
+    border-color: rgb(210, 210, 210);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+#description{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(247, 253, 253);
+    border-color: rgb(210, 210, 210);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+#save-task{
+    width: 80px;
+    height: 35px;
+    background-color: var(--dark);
+    border-radius: 10px;
+    border: 0px;
+    color: #eff5ff;
+    
+}
+
+#logout{
+    width: 80px;
+    height: 35px;
+    background-color: var(--dark);
+    border-radius: 40px;
+    border: 0px;
+    color: #eff5ff;
+}
+
 
 @media screen and (max-width: 768px) {
 
     .logo{
-        width: 60%;
+        width: 70%;
     }
     
     .hover {
-        width: 30%;
+        width: 100%;
+    }
+    .hover:hover {
+        width: 100%;
+    }
+    #title{
+        width: 100%;
+    }
+    #description{
+        width: 100%;
     }
 }
+

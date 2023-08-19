@@ -25,8 +25,7 @@
           <!-- Conditionally render login or logout links -->
           {{log logged_in}}
           {{#if logged_in}}
-            <a href="/dashboard">dashboard</a>
-            |
+            
             <button class="no-button" id="logout">logout</button>
           {{else}}
             <a href="/login" class="profile">login</a>
@@ -36,7 +35,7 @@
       <main class="container container-fluid mt-5">
         <aside class="aside-bar" id="side-bar">
             <div class="home-page hover">
-                <a href=""><button type="home-page" class="aside-button">
+                <a href="/dashboard"><button type="home-page" class="aside-button">
                     <img src="/images/home (1).svg" alt="Home" class="icon home-icon">
                 </button></a>
                 <p>Home</p>
@@ -57,9 +56,10 @@
                 </button><p>Interests</p>
             </div>
               <div class="">
-                <button type="add-task" id="add-task" class="aside-button">
+        
+                <a href="dashboard/tasks"><button type="add-task" id="add-task" class="aside-button">
                     <img src="/images/add-task.svg" alt="" class="add-icon">
-                </button>
+                </button></a>
             </div>
         </aside>
         <div class="dashboard">

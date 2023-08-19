@@ -1,8 +1,5 @@
 const router = require('express').Router();
-const {
-  User,
-  Tasks
-} = require('../models');
+const {User, Tasks} = require('../models');
 const withAuth = require('../utils/auth');
 
 // find all the tasks specific to the user if logged in
@@ -46,9 +43,10 @@ router.get("/", withAuth, async (req, res) => {
 
 
 // allowing user to add a new post if logged in
-router.get("/new", (req, res) => {
+router.get("/tasks", (req, res) => {
   res.render("add-task", {
     logged_in: req.session.logged_in,
+
   });
 });
 
