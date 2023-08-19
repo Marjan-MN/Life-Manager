@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="calendar">
+    <div class="header">
+      <button id="prevBtn">&lt;</button>
+      <h1 id="monthYear">{{ monthName }} {{ year }}</h1>
+      <button id="nextBtn">&gt;</button>
+    </div>
+    <div class="days">
+      {{#each daysOfWeek}}
+        <div class="day">{{ this }}</div>
+      {{/each}}
+    </div>
+    <div class="grid" id="calendarGrid">
+      {{#each calendarDays}}
+        <div class="grid-item">{{ this }}</div>
+      {{/each}}
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
