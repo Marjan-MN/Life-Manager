@@ -21,5 +21,4 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
-
 document.querySelector('.new-tasks-form').addEventListener('submit', newFormHandler);

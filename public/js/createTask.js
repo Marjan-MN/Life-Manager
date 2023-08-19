@@ -1,8 +1,11 @@
-async function createTasksHandler(event) {
-    event.preventDefault();
+// const Swal = require('sweetalert2')
 
-    document.location.replace('/dashboard/new')
+async function createTasksHandler() {
+    
+    //event.preventDefault();
+ 
+    document.location.replace('/dashboard/tasks')
 }
 
 
-document.querySelector('#create-new-Task').addEventListener('click', createTasksHandler);
+document.querySelector('#save-task').addEventListener('click', createTasksHandler);

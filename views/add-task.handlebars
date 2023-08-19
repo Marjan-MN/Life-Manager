@@ -1,21 +1,22 @@
 
 <article>
 
-<form class="form signup-form">
-      
+  <form class="form addTask-form">
+      <label for="title-addTask" class="formTag">Title:</label>
       <div class="form-group">
-        <label for="username-signup">title:</label>
+        
         <input class="form-input" type="text" id="title" />
       </div>
+      <label for="description-addTask" class="formTag" >Description:</label>
       <div class="form-group">
-        <label for="password-signup">description:</label>
+        
         <textarea class="form-input" type="description" id="description"></textarea>
       </div>
       <div class="form-bottom">
-        <button class="btn btn-primary" type="submit">save</button>
+        <button class="btn btn-primary" id="save-task" type="submit">save</button>
       </div>
-    </form>
-
+  </form>
+  <script src="/js/createTask.js"></script>
 
 
 </article>
