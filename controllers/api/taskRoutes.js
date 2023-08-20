@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const Tasks = require('../../models/Tasks');
-
+const withAuth = require('../../utils/auth');
 // create a task
-router.post('/', async (req,res) => {
+router.post('/',  withAuth, async (req,res) => {
     try {
         const taskData = await Tasks.create({
             title: req.body.title,
