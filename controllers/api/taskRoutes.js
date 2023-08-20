@@ -5,7 +5,7 @@ const Tasks = require('../../models/Tasks');
 router.post('/', async (req,res) => {
     try {
         const taskData = await Tasks.create({
-            task_name: req.body.task_name,
+            title: req.body.title,
             description: req.body.description,
             date_created: req.body.date_created
         });
@@ -20,7 +20,7 @@ router.put('/:id', async (req, res) => {
   try {
     const task = await Tasks.update(
       {
-        task_name: req.body.task_name,
+        title: req.body.title,
         description: req.body.description,
         date_created: req.body.date_created
       },
