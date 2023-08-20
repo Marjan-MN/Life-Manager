@@ -1,11 +1,11 @@
 
 <main id="mytasks">
 {{#each tasks}}
-<article>
+<article class="mytask-container">
     <a href="/tasks/edit/{{id}}">
-        <h3>{{title}}</h3>
+        <h3 class="saved-task">{{title}}</h3>
     </a>
-    <div>{{description}}</div>
+    <div class="saved-task des">{{description}}</div>
 </article>
 {{/each}}
 </main>
