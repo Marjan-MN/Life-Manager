@@ -5,14 +5,36 @@ const Tasks = require('../../models/Tasks');
 router.post('/', async (req,res) => {
     try {
         const taskData = await Tasks.create({
-            title: req.body.title,
-            description: req.body.description
+            task_name: req.body.task_name,
+            description: req.body.description,
+            date_created: req.body.date_created
         });
         res.status(200).json(taskData)
     } catch (err) {
         res.status(400).json(err);
     }
 });
+
+// update a task
+router.put('/:id', async (req, res) => {
+  try {
+    const task = await Tasks.update(
+      {
+        task_name: req.body.task_name,
+        description: req.body.description,
+        date_created: req.body.date_created
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json(dish);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}) ;
 
 // route to get a specific task by id
 router.get("/:id", (req, res) => {
