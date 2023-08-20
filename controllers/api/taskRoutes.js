@@ -16,9 +16,9 @@ router.post('/',  withAuth, async (req,res) => {
 });
 
 // update a task
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
-    const task = await Tasks.update(
+    const editeTask = await Tasks.update(
       {
         title: req.body.title,
         description: req.body.description,
@@ -30,14 +30,14 @@ router.put('/:id', async (req, res) => {
         },
       }
     );
-    res.status(200).json(taskData);
+    res.status(200).json(editeTask);
   } catch (err) {
     res.status(500).json(err);
   }
 }) ;
 
 // delete a task
-router.delete('/:id', async (req,res) => {
+router.delete('/:id', withAuth, async (req,res) => {
   try {
     const task = await Tasks.destroy(
       {
