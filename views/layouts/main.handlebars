@@ -24,9 +24,11 @@
           {{#if logged_in}}
            <div class="profile-container">
             <button class="no-button" id="logout">logout</button>
+            <p>Hi {{userData.dataValues.username}}!</p>
             <img
             class="profile photo header-child header-bar"
             src="/images/Profile-photo.svg"></div>
+            
           {{else}}
             <a href="/login" class="profile"></a>
           {{/if}}
@@ -36,19 +38,20 @@
         <aside class="aside-bar" id="side-bar">
             <div class="home-page hover">
                 <a href="/dashboard"><button type="home-page" class="aside-button">
-                    <img src="/images/home (1).svg" alt="Home" class="icon home-icon">
+                    <img src="/images/Home(2).svg" alt="Home" class="icon home-icon">
                 </button></a>
                 <p>Home</p>
             </div>
-            <div class="hover">
+           
+             <div class="hover">
+                <button type="my-task" id="my-task" class="aside-button">
+                    <img src="/images/my-tasks(2).svg" alt="" class="icon">
+                </button><p>My Tasks</p>
+            </div>
+             <div class="hover">
                 <a href="dashboard/calendar"><button type="calendar" id="calendar" class="aside-button">
                     <img src="/images/calendar(1).svg" alt="" class="icon">
                 </button></a><p>Calendar</p>
-            </div>
-             <div class="hover">
-                <button type="my-task" id="my-task" class="aside-button">
-                    <img src="/images/my-tasks(1).svg" alt="" class="icon">
-                </button><p>My Tasks</p>
             </div>
             <div class="hover">
                 <button type="interests" id="interests" class="aside-button">
@@ -78,6 +81,7 @@
     {{/if}}
   
     </script>
+    
   </body>
 
 </html>
