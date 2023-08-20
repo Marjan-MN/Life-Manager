@@ -1,13 +1,21 @@
 
 :root {
     --text: #282828;
-    --light-dark: #eff5ff;
+    --light-dark: #f8c74128;
     --dark: #2B4DFF;
-    --hover: #2ba3ff42;
+    --hover: #f9b03a65;
 }
 .container{
     display: flex;
 }
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+  
+
+
 .icon {
     float: right;
     border: 0;
@@ -131,7 +139,7 @@
     margin-bottom: 20px;
     
 }
-#save-task{
+#save-task {
     width: 80px;
     height: 35px;
     background-color: var(--dark);
@@ -140,7 +148,14 @@
     color: #eff5ff;
     
 }
-
+.btn-primary{
+    width: 80px;
+    height: 35px;
+    background-color: var(--dark);
+    border-radius: 10px;
+    border: 0px;
+    color: #eff5ff;
+}
 #logout{
     width: 80px;
     height: 35px;
@@ -148,6 +163,14 @@
     border-radius: 40px;
     border: 0px;
     color: #eff5ff;
+}
+.form-input{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(247, 253, 253);
+    border-color: rgb(210, 210, 210);
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 .profile{
     display: block;
