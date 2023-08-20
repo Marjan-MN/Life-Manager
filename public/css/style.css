@@ -16,7 +16,18 @@
     background: transparent;
     cursor: pointer;
 }
+.profile-container{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
+}
+.photo{
+    width: 60px;
+}
 
 .add-icon {
     border: 0;
@@ -67,7 +78,7 @@
 }
 
 /* style of header */
-.main-header {
+.main-header{
     margin: 0%;
     padding: 0%;
     display: flex;
@@ -77,12 +88,27 @@
 }
 .profile{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 #add-task{
     margin-top: 50px;
     /* margin-left: 230px; */
+}
+.mytask-container{
+    background-color: rgb(247, 253, 253);
+    border-radius: 15px;
+}
+.mytask-container:hover{
+    background-color: var(--hover);
+}
+.saved-task{
+    margin: 20px;
+}
+
+#mytasks{
+    margin: 50px;
 }
 .addTask-form{
     margin: 50px;
@@ -123,7 +149,9 @@
     border: 0px;
     color: #eff5ff;
 }
-
+.profile{
+    display: block;
+}
 
 @media screen and (max-width: 768px) {
 

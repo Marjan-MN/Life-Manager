@@ -1,6 +1,6 @@
 async function editFormHandler(event) {
     event.preventDefault();
-    const task_name = document.querySelector('#task_name').value;
+    const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
 
     // window.location gives us access to the URL We then use the .split() method to access the number at the end of the URL and set that equal to id.
@@ -11,7 +11,7 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/task/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            task_name,
+            title,
             description,
         }),
         headers: {
