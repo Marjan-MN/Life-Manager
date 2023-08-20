@@ -1,38 +1,62 @@
 
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Tasks } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/mytasks', withAuth, async (req, res) => {
     try {
+      const tasksData = await Tasks.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+        ],
+      });
+      // Serialize data so the template can read it
+       const tasks = tasksData.map((task) => task.get({ plain: true }));
+  
+      // Pass serialized data and session flag into template
+      res.render('mytasks', { 
+        tasks, 
+        logged_in: req.session.logged_in 
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+  
+
+
       // Mock data:
-      var context = { tasks : [
-        {
-          id: 1,
-          title: "laundry",
-          description: "dont forget to save enough laundry coins"
-        },
-        {
-          id: 2,
-          title: "order meals",
-          description: "Factor meal subscription"
-        },
-        {
-          id: 3,
-          title: "get new gym membership",
-          description: "dont forget to save enough laundry coins"
-        },
-      ] }
+      // var context = { tasks : [
+      //   {
+      //     id:1,
+      //     title: "laundry",
+      //     description: "dont forget to save enough laundry coins"
+      //   },
+      //   {
+      //     id:2,
+      //     title: "order meals",
+      //     description: "Factor meal subscription"
+      //   },
+      //   {
+      //     id:3,
+      //     title: "get new gym membership",
+      //     description: "dont forget to save enough laundry coins"
+      //   },
+      // ] }
 
       // TODO: Replace mock data with plain data from Sequelize
       // Hint: Google for: Sequelize find where
 
 
-      res.render('mytasks', context);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  //     res.render('mytasks', context);
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  // });
 
 // Prevent non logged in users from viewing the homepage
 router.get('/', withAuth, async (req, res) => {
