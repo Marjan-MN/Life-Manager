@@ -30,11 +30,26 @@ router.put('/:id', async (req, res) => {
         },
       }
     );
-    res.status(200).json(dish);
+    res.status(200).json(taskData);
   } catch (err) {
     res.status(500).json(err);
   }
 }) ;
+
+// delete a task
+router.delete('/:id', async (req,res) => {
+  try {
+    const task = await Tasks.destroy(
+      {
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.status(200).json(taskData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // route to get a specific task by id
 router.get("/:id", (req, res) => {
