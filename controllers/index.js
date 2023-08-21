@@ -19,6 +19,6 @@ router.use('/api', apiRoutes);
 // POST localhost:3001/api/tasks/
 
 
-router.use('/dashboard', dashboard);
+// router.use('/dashboard', dashboard);
 
 module.exports = router;

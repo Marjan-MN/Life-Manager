@@ -39,7 +39,7 @@ router.put('/:id', withAuth, async (req, res) => {
 // delete a task
 router.delete('/:id', withAuth, async (req,res) => {
   try {
-    const task = await Tasks.destroy(
+    const taskData = await Tasks.destroy(
       {
         where: {
           id: req.params.id,
