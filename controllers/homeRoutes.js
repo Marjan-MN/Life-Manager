@@ -5,12 +5,9 @@ const withAuth = require('../utils/auth');
 router.get('/mytasks', withAuth, async (req, res) => {
     try {
       const tasksData = await Tasks.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['username'],
-          },
-        ],
+        where: {
+          user_id: req.session.user_id,
+        }
       });
       // Serialize data so the template can read it
        const tasks = tasksData.map((task) => task.get({ plain: true }));
