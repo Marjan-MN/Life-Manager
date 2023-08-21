@@ -1,12 +1,15 @@
 const router = require('express').Router();
-const Tasks = require('../../models/Tasks');
 const withAuth = require('../../utils/auth');
+const { User, Tasks } = require('../../models');
+
 // create a task
 router.post('/',  withAuth, async (req,res) => {
+  console.log("save task", req.body)
     try {
         const taskData = await Tasks.create({
             title: req.body.title,
             description: req.body.description,
+            user_id: req.session.user_id,
             date_created: req.body.date_created
         });
         res.status(200).json(taskData)
@@ -22,6 +25,7 @@ router.put('/:id', withAuth, async (req, res) => {
       {
         title: req.body.title,
         description: req.body.description,
+        user_id: req.session.user_id,
         date_created: req.body.date_created
       },
       {
@@ -81,10 +85,5 @@ router.get("/:id", (req, res) => {
         res.status(500).json(err);
       });
   });
-
-
-
-
-
 
 module.exports = router;
