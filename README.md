@@ -24,11 +24,16 @@ As a motivated individual seeking an effective way to manage my tasks and lists,
 * Be interactive (i.e., accept and respond to user input).
 ```
 ## Screenshot of app
+![ScreenShots of the app.](./public/images/screenshot.jpg)
+
+## links
+
 
 ## Technologies used
-Node.js
-npm
-express
-mysql
-SweetAlert
+- Node.js
+- npm
+- express
+- mysql
+- sequelize 
+- SweetAlert
 
