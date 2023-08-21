@@ -27,6 +27,8 @@ As a motivated individual seeking an effective way to manage my tasks and lists,
 ![ScreenShots of the app.](./public/images/screenshot.jpg)
 
 ## links
+[View deployed HEROKU app here!](https://glacial-thicket-95359-563f8150aea7.herokuapp.com/login/)
+
 
 
 ## Technologies used
