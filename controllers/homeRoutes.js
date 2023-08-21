@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 const { User, Tasks } = require('../models');
 const withAuth = require('../utils/auth');
@@ -66,7 +65,7 @@ router.get('/', withAuth, async (req, res) => {
         order: [['username', 'ASC']],
       });
   
-      const users = userData.map((project) => project.get({ plain: true }));
+      const users = userData.map((task) => task.get({ plain: true }));
   
       res.render('homepage', {
         users,
@@ -89,4 +88,3 @@ router.get('/', withAuth, async (req, res) => {
   });
   
   module.exports = router;
-

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Tasklist, Tasks, } = require('../../models');
+const { User, Tasks } = require('../../models');
 
 // this will post the username and save it, and keep you logged in.
 router.post('/', async (req, res) => {

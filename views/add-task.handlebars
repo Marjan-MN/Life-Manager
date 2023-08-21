@@ -1,4 +1,6 @@
-
+{{log userData.dataValues}}
+{{#each tasks as |task|}}
+{{/each}}
 <article>
 
   <form id="form" class="form addTask-form">
@@ -13,8 +15,8 @@
         <textarea class="form-input" type="description" id="description"></textarea>
       </div>
       <div class="form-bottom">
-        <a href="dashboard/mytasks"><button class="btn btn-primary" id="save-task" type="submit">save</button>
-      </div></a>
+        <button onclick="createTasksHandler()" class="btn btn-primary" id="save-task" type="submit">save</button>
+      </div>
   </form>
   <script src="/js/createTask.js"></script>
 

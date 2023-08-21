@@ -24,6 +24,21 @@
     background: transparent;
     cursor: pointer;
 }
+.mytask-icon{
+    border: 0;
+    width: 20px;
+    height: 25px;
+    background: transparent;
+    cursor: pointer;
+}
+.mytask-icon:hover{
+    border: 0;
+    width: 25px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+}
+
 .profile-container{
     margin: 0%;
     padding: 0%;
