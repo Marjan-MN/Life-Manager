@@ -8,17 +8,22 @@ const taskData = require('./TaskData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
-  for(const task of taskData){
-    await Tasks.create({
-      ...task,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    })
-  }
+  await Tasks.bulkCreate(taskData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+
+
+
+  // for(const task of taskData){
+  //   await Tasks.create({...task})
+  // }
   process.exit(0);
 };
 
