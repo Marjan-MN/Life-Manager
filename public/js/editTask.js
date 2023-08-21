@@ -1,14 +1,14 @@
 async function editFormHandler(event) {
     event.preventDefault();
-    const title = document.querySelector('#title').value;
-    const description = document.querySelector('#description').value;
+    const title = document.querySelector('input[name="task-title"]').value;
+    const description = document.querySelector('textarea[name="task-description"]').value;
 
     // window.location gives us access to the URL We then use the .split() method to access the number at the end of the URL and set that equal to id.
     const id = window.location.toString().split('/')
     [window.location.toString().split('/').length -1 ];
 
     // the controller will handle this put request
-    const response = await fetch(`/api/task/${id}`, {
+    const response = await fetch(`/api/tasks/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -21,7 +21,7 @@ async function editFormHandler(event) {
 
     // confirmation the task was updated successfully
     if (response.ok) {
-        document.location.replace(`/task/${id}`);
+        document.location.replace(`/mytasks}`);
     } else {
         alert('Failed to update task');
     }
