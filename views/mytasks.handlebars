@@ -6,15 +6,11 @@
         <h3 class="saved-task">{{title}}</h3>
     </a>
     <div class="saved-task des">{{description}}</div>
- homepage
+ 
     <button class="aside-button"><img src="/images/edit.svg" class="mytask-icon"></button>
 
     <button onclick=" deleteFormHandler()" class="aside-button delete-button"><img src="/images/delete.svg" class="mytask-icon"></button>
 
-    <button class="aside-button"><img src="/images/delete.svg" class="mytask-icon"></button>
-
-    <a href="`/api/tasks/${id}`"><button type="submit">Edit</button></a>
-    <button>delete</button>
 </article>
 {{/each}}
 </main>
