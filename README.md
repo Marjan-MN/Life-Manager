@@ -7,7 +7,12 @@ LifeManager is a powerful web application designed to help users seamlessly orga
 - Marjan Nazari
 - Halle Klum
 ## user story
-As a motivated individual seeking an effective way to manage my tasks and lists, I want to effortlessly organize my personal responsibilities while also having the option to share tasks with others when collaboration is needed.
+ As A User…
+
+I want to login, create and save an ordered list of tasks
+
+So that I can manage my day to day tasks, create grocery lists, create travel itineraries, and more!
+
 ## Acceptance Criteria
 ```
 * Use Node.js and Express.js to create a RESTful API.
@@ -23,7 +28,7 @@ As a motivated individual seeking an effective way to manage my tasks and lists,
 * Be responsive.
 * Be interactive (i.e., accept and respond to user input).
 ```
-## Screenshot of app
+## Screenshot of the app
 ![ScreenShots of the app.](./public/images/screenshot.jpg)
 
 ## links
@@ -36,6 +41,7 @@ As a motivated individual seeking an effective way to manage my tasks and lists,
 - npm
 - express
 - mysql
-- sequelize 
-- SweetAlert
+- sequelize
+- bcrypt 
+- Bulma
 
